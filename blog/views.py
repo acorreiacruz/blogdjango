@@ -5,5 +5,5 @@ class PostListView(ListView):
     model = Post
 
 class PostDetailView(DetailView):
-    model = DetailView
+    model = Post
 

@@ -2,6 +2,16 @@
 
 {% block title %} Meu Blog {% endblock %}  
 
-{% for post in post_list%}
-
-{% endfor %}
+{% block content %}
+    {% for post in post_list %}
+        <div class='container-post'>
+            <h2 class="post-title">{{post.title}}</h2>
+            <div class="post-infos">
+                Publicado por: {{post.author | title }} em {{post.created_at | date }}
+            </div>
+            <div class="content">
+                {{post.body |  | truncatewords:10}}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
